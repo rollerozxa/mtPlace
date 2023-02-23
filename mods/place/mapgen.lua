@@ -10,7 +10,7 @@ minetest.register_node("place:barrier", {
 	groups = { not_in_creative_inventory = 1 }
 })
 
-local node = minetest.get_content_id("place:colour_1")
+local node = minetest.get_content_id("place:colour_23")
 local barrier = minetest.get_content_id("place:barrier")
 
 local data = {}
@@ -29,7 +29,7 @@ if minetest.get_mapgen_setting('mg_name') == "singlenode" then
 			for x = minp.x, maxp.x do
 				if (x >= -size and x <= size) and (z >= -size and z <= size) then
 					if y == 0 then
-						data[posi] = minetest.get_content_id("place:colour_"..math.random(1,3))
+						data[posi] = node --minetest.get_content_id("place:colour_"..math.random(1,3))
 					elseif y < 0 then
 						data[posi] = barrier
 					end
