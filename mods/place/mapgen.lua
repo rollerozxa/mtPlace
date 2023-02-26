@@ -46,3 +46,13 @@ if minetest.get_mapgen_setting('mg_name') == "singlenode" then
 		vm:write_to_map()
 	end)
 end
+
+-- Protect the MTPLACE.VOXELMANIP.SE sign in the bottom left corner
+function minetest.is_protected(pos, name)
+	if pos.x >= 0 and pos.x < 86 and pos.z >= 0 and pos.z < 9 then
+	--and name ~= "ROllerozxa" and name ~= "singleplayer" then
+		return true
+	end
+
+	return false
+end
