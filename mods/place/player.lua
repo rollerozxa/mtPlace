@@ -39,3 +39,7 @@ minetest.register_on_joinplayer(function(player)
 	pri["fast"] = true
 	minetest.set_player_privs(playername, pri)
 end)
+
+minetest.register_on_newplayer(function(player)
+	player:set_pos({ x = 256, y = 2, z = 256 })
+end)

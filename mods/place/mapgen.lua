@@ -15,7 +15,7 @@ local barrier = minetest.get_content_id("place:barrier")
 
 local data = {}
 
-local size = 128
+local size = 512
 
 if minetest.get_mapgen_setting('mg_name') == "singlenode" then
 	minetest.register_on_generated(function(minp, maxp, blockseed)
@@ -27,7 +27,7 @@ if minetest.get_mapgen_setting('mg_name') == "singlenode" then
 		for y = minp.y, maxp.y do
 			local posi = area:index(minp.x, y, z)
 			for x = minp.x, maxp.x do
-				if (x >= -size and x <= size) and (z >= -size and z <= size) then
+				if (x >= 0 and x < size) and (z >= 0 and z < size) then
 					if y == 0 then
 						data[posi] = node --minetest.get_content_id("place:colour_"..math.random(1,3))
 					elseif y < 0 then
