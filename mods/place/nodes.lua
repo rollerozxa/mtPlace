@@ -27,7 +27,7 @@ local nodes = {
 }
 
 for id, colour in pairs(nodes) do
-	local tile = "^[resize:16x16^[colorize:#"..colour..":255^grid_cell.png"
+	local tile = "^[resize:16x16^[colorize:#"..colour..":255"
 
 	minetest.register_node("place:colour_"..id, {
 		tiles = {tile},
