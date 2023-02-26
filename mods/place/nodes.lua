@@ -27,17 +27,13 @@ local nodes = {
 }
 
 for id, colour in pairs(nodes) do
-	tile = "^[resize:16x16^[colorize:#"..colour..":255"
+	local tile = "^[resize:16x16^[colorize:#"..colour..":255^grid_cell.png"
 
 	minetest.register_node("place:colour_"..id, {
 		tiles = {tile},
 		inventory_image = tile,
 		wield_scale = {x = 0, y = 0, z = 0},
 		drop = "",
-		node_placement_prediction = "air",
-		groups = {snappy=3},
-		on_place = function(itemstack, user, pointed_thing)
-			minetest.set_node(pointed_thing.under, { name = itemstack:to_string() })
-		end
+		buildable_to = true
 	})
 end
