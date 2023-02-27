@@ -20,6 +20,7 @@ minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack
 	return true
 end)
 
+include("api")
 include("nodes")
 include("mapgen")
 include("player")
