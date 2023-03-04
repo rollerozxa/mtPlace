@@ -34,6 +34,9 @@ for id, colour in pairs(nodes) do
 		inventory_image = tile,
 		wield_scale = {x = 0, y = 0, z = 0},
 		drop = "",
-		buildable_to = true
+		buildable_to = true,
+		on_drop = function(itemstack, dropper, pos)
+			return itemstack
+		end
 	})
 end
